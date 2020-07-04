@@ -24,8 +24,8 @@ CSS file.
 
 // Select the grid you would like to use
 // @include foundation-grid;
-// @include foundation-flex-grid;
-@include foundation-xy-grid-classes;
+@include foundation-flex-grid;
+// @include foundation-xy-grid-classes;
 
 @include foundation-flex-classes;
 @include foundation-typography;
@@ -66,3 +66,12 @@ CSS file.
 
 // Import your custom styles
 @import "global";
+
+// globals
+@import "./globals/variables";
+
+// components
+@import "./components/tables";
+
+// pages
+@import "./pages/home";

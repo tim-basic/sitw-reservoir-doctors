@@ -1,0 +1,43 @@
+.hero {
+    position: relative;
+    img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+    h1{
+        color: yellow;
+    }
+    &__row {
+        min-height: 100vh;
+        display: flex;
+    }
+    &__content{
+        display: flex;
+        align-items: center;
+        max-width: 800px;
+    }
+}
+.staff {
+    &__row {
+        display: flex;
+    }
+    &__content{
+        flex: 1;
+        margin-right: 50px;
+    }
+    &__list{
+        flex: 0.5;
+    }
+    &__list_heading{
+
+    }
+    &__list_name{
+
+    }
+    &__heading{
+        margin: 50px
+    }
+}

@@ -1,0 +1,9 @@
+html {
+    scroll-behavior: smooth;
+  }
+section {
+    padding: 50px 0;
+    &.page-hero {
+      padding: 80px 0;
+    }
+}
