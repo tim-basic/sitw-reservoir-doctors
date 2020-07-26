@@ -45,3 +45,42 @@ require_once(get_template_directory().'/functions/translation/translation.php');
 
 // Customize the WordPress admin
 // require_once(get_template_directory().'/functions/admin.php'); 
+
+// Console Log for debugging php
+function console_log($output, $with_script_tags = true)
+{
+    $js_code = 'console.log(' . json_encode($output, JSON_HEX_TAG) .
+        ');';
+    if ($with_script_tags) {
+        $js_code = '<script>' . $js_code . '</script>';
+    }
+    echo $js_code;
+}
+
+// Adding option page
+if (function_exists('acf_add_options_page')) {
+
+    acf_add_options_page(array(
+        'menu_title' => 'Theme Settings',
+        'menu_slug' => 'theme-general-settings',
+        'capability' => 'edit_posts',
+        'redirect' => true,
+    ));
+
+    acf_add_options_sub_page(array(
+        'page_title' => 'Theme Header Settings',
+        'menu_title' => 'Header',
+        'parent_slug' => 'theme-general-settings',
+    ));
+
+    acf_add_options_sub_page(array(
+        'page_title' => 'Theme Footer Settings',
+        'menu_title' => 'Footer',
+        'parent_slug' => 'theme-general-settings',
+    ));
+    acf_add_options_sub_page(array(
+        'page_title' => 'Theme Shared Components Settings',
+        'menu_title' => 'Shared Components',
+        'parent_slug' => 'theme-general-settings',
+    ));
+}
